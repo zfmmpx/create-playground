@@ -1,0 +1,32 @@
+{
+  "files.exclude": {
+    // "dist": true,
+    // "node_modules": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "package-lock.json": true,
+    "yarn.lock": true,
+    ".yarn-cache": true,
+    ".next": true,
+    "**/*.min.js": true,
+    "flow-typed": true
+  },
+  // 设置Format Document With为prettier，并且下载vs code的prettier插件，把下面这一项设置为true，就可以用prettier去格式化
+  "editor.formatOnSave": true,
+
+  // eslint
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // "eslint.autoFixOnSave": true,
+  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
