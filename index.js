@@ -31,11 +31,13 @@ const copyFolder = (fromPath, _toPath = 'playground', notFirstTime) => {
     if (toPath !== _toPath) {
       console.log(
         chalk.yellow(
-          `Dir ${chalk.bold.italic(_toPath)} is exists. Creating dir ${chalk.bold.italic(toPath)}.`,
+          `Dir ${chalk.bold.italic(_toPath)} is exists. Creating dir ${chalk.bold.italic(
+            toPath,
+          )}...`,
         ),
       )
     } else {
-      console.log(chalk.green(`Creating dir ${chalk.bold.italic(toPath)}`))
+      console.log(chalk.green(`Creating dir ${chalk.bold.italic(toPath)}...`))
     }
   }
 
@@ -53,16 +55,20 @@ const copyFolder = (fromPath, _toPath = 'playground', notFirstTime) => {
       copyFolder(source, target, true)
     }
   }
+  if (!notFirstTime) {
+    return toPath
+  }
 }
 
-copyFolder('./filesToCopy')
+const toPath = copyFolder('./filesToCopy')
 
-// execSync('cd playground; yarn')
+console.log(chalk.green(`Installing dir ${chalk.bold.italic(toPath)}'s dependencies...`))
+execSync(`cd ${toPath}; yarn`)
 
-// // 已经安装好依赖了，清空无用的东西
-// const indexPath = path.join(__dirname, 'index.js')
-// const buffer = fs.readFileSync(indexPath)
-// const str = buffer.toString()
-// const reg = /execSync\(`cd \${__dirname}; yarn`\)\s*|(?<=execSync\('cd playground; yarn'\))[\s\S]*/g
-// const finalStr = str.replace(reg, '')
-// fs.writeFileSync(indexPath, finalStr)
+// 已经安装好依赖了，清空无用的东西
+const indexPath = path.join(__dirname, 'index.js')
+const buffer = fs.readFileSync(indexPath)
+const str = buffer.toString()
+const reg = /execSync\(`cd \${__dirname}; yarn`\)\s*|(?<=execSync\(`cd \${toPath}; yarn`\))[\s\S]*/g
+const finalStr = str.replace(reg, '')
+fs.writeFileSync(indexPath, finalStr)
