@@ -1,5 +1,5 @@
 {
-  "name": "create-playfewground",
+  "name": "create-playground",
   "version": "1.0.1",
   "description": "This is a CLI tool for creating a js playground.",
   "main": "index.js",
