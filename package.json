@@ -1,5 +1,5 @@
 {
-  "name": "create-playground",
+  "name": "create-playfewground",
   "version": "1.0.0",
   "description": "This is a CLI tool for creating a js playground.",
   "main": "index.js",
@@ -9,8 +9,10 @@
   "author": "Jimmy Huang",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^4.0.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0"
+    "eslint-plugin-react": "^7.19.0",
+    "yargs": "^15.3.1"
   },
   "dependencies": {},
   "bin": {
