@@ -4,13 +4,17 @@
   "description": "This is a js playground.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --open",
+    "build": "webpack -p"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "latest",
     "eslint-plugin-react": "latest",
-    "webpack": "^4.43.0"
+    "webpack": "latest",
+    "webpack-dev-server": "latest",
+    "webpack-cli": "latest",
+    "html-webpack-plugin": "latest"
   }
 }

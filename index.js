@@ -31,9 +31,7 @@ const copyFolder = (fromPath, _toPath = 'playground', notFirstTime) => {
     if (toPath !== _toPath) {
       console.log(
         chalk.yellow(
-          `Dir ${chalk.bold.italic(_toPath)} is exists. Creating dir ${chalk.bold.italic(
-            toPath,
-          )}...`,
+          `Dir ${chalk.bold.italic(_toPath)} exists. Creating dir ${chalk.bold.italic(toPath)}...`,
         ),
       )
     } else {
