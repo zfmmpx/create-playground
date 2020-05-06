@@ -59,6 +59,7 @@ const copyFolder = (fromPath, _toPath = 'playground', notFirstTime) => {
 }
 
 const toPath = copyFolder('./filesToCopy')
+execSync(`cd ${toPath}; mv gitignore .gitignore`)
 
 console.log(chalk.green(`Installing dir ${chalk.bold.italic(toPath)}'s dependencies...`))
 execSync(`cd ${toPath}; yarn`)
