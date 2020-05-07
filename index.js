@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const { execSync } = require('child_process')
-execSync(`cd ${__dirname}; yarn`)
+// execSync(`cd ${__dirname}; yarn`)
 const chalk = require('chalk')
 
 const calcPath = (path) => {
@@ -64,10 +64,10 @@ execSync(`cd ${toPath}; mv gitignore .gitignore`)
 console.log(chalk.green(`Installing dir ${chalk.bold.italic(toPath)}'s dependencies...`))
 execSync(`cd ${toPath}; yarn`)
 
-// 已经安装好依赖了，清空无用的东西
-const indexPath = path.join(__dirname, 'index.js')
-const buffer = fs.readFileSync(indexPath)
-const str = buffer.toString()
-const reg = /execSync\(`cd \${__dirname}; yarn`\)\s*|(?<=execSync\(`cd \${toPath}; yarn`\))[\s\S]*/g
-const finalStr = str.replace(reg, '')
-fs.writeFileSync(indexPath, finalStr)
+// // 已经安装好依赖了，清空无用的东西
+// const indexPath = path.join(__dirname, 'index.js')
+// const buffer = fs.readFileSync(indexPath)
+// const str = buffer.toString()
+// const reg = /execSync\(`cd \${__dirname}; yarn`\)\s*|(?<=execSync\(`cd \${toPath}; yarn`\))[\s\S]*/g
+// const finalStr = str.replace(reg, '')
+// fs.writeFileSync(indexPath, finalStr)
