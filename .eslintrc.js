@@ -26,5 +26,6 @@ module.exports = {
       'error',
       { blankLine: 'always', prev: '*', next: 'return' },
     ],
+    'react/self-closing-comp': ['error'],
   },
 }
